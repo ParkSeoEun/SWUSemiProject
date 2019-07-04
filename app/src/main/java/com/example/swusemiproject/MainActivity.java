@@ -2,7 +2,12 @@ package com.example.swusemiproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import java.time.Instant;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,10 +16,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 테스트 코드1
-
-        // 오늘 컨디션 중간.....
-
-        // 커밋 및 push 테스트
+        // 회원가입
+        Button btnReg = findViewById(R.id.btnReg);
+        btnReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), RegActivity.class));
+            }
+        });
     }
 }

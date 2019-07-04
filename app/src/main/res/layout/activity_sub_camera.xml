@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".SubCameraActivity">
+
+    <ImageView
+        android:id="@+id/imgSubPic"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        tools:srcCompat="@tools:sample/avatars" />
+    <Button
+        android:id="@+id/btnSubCamera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:background="#F9CC3A"
+        android:layout_margin="5dp"
+        android:text="사진찍기"/>
+</LinearLayout>

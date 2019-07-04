@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgPic"
+        android:id="@+id/imgRegPic"
         android:layout_width="158dp"
         android:layout_height="167dp"
         android:layout_marginStart="8dp"
@@ -35,7 +35,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/btnCamera"
+        android:id="@+id/btnRegCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegCamera" />
 
     <EditText
         android:id="@+id/editRegPwdCheck"
@@ -75,7 +75,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegCamera" />
 
     <EditText
         android:id="@+id/editRegPwd"
@@ -90,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegCamera" />
 
     <EditText
         android:id="@+id/editRegId"
@@ -104,10 +104,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCamera" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRegCamera" />
 
     <Button
-        android:id="@+id/btnRegCheck"
+        android:id="@+id/btnRegSave"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="1"
-    tools:context=".MemoListActivity">
+    tools:context=".MemoList"
+    android:weightSum="1">
 
     <Button
         android:id="@+id/btnNewMemo"
-        android:layout_width="300dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.09"
-        android:text="새 메모 작성"
-        android:layout_margin="15dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#F9CC3A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.9">
-    </androidx.viewpager.widget.ViewPager>
+        android:layout_weight="0.09"
+        android:layout_margin="15dp"
+        android:background="#F9CC3A"
+        android:text="새 메모 작성" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.91">
+    </ListView>
 </LinearLayout>

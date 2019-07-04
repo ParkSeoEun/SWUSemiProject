@@ -5,18 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="1"
     tools:context=".AfterLogActivity">
     <!-- Tab 영역 -->
-    <com.google.android.material.tabs.TabLayout>
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.08">
     </com.google.android.material.tabs.TabLayout>
     <!-- 하단 표시 영역 -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="0dp"
+        android:layout_weight="0.92">
     </androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

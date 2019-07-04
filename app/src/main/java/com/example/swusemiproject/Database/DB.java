@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.example.swusemiproject.model.MemberModel;
 //import com.example.swusemiproject.model.MyItem;
+import com.example.swusemiproject.model.Memo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -15,21 +16,23 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DB {
+    public final static String TBL_MEMO = "MEMO";
+
     private static DB inst;
     private static SharedPreferences sf = null; // 저장 객체
 
-   // private static List<MemberModel> members = null; // 원본 데이터
+   private static List<Memo> memos = null; // 원본 데이터
 
     private DB() {}
 
     public static DB getInstance(Context context) {
 
-     /*   if(members == null) {
-            members = new ArrayList<>();
-        } */
+        if(memos == null) {
+            memos = new ArrayList<>();
+        }
 
         if(sf == null) {
-            sf = context.getSharedPreferences("MEMBER", Activity.MODE_PRIVATE);
+            sf = context.getSharedPreferences("DB", Activity.MODE_PRIVATE);
         }
 
         if(inst == null) {
@@ -38,6 +41,47 @@ public class DB {
 
         return inst;
     }
+    // 메모 선두에 저장
+    public void addMemo(Memo memo) {
+        memos.add(0,memo);
+    }
+    // memo 획득
+    public Memo getMemo(int index) {
+        return memos.get(index);
+    }
+    // memo 변경
+    public void setMemo(int index, Memo memo) {
+        memos.set(index, memo);
+    }
+    // memo 삭제
+    public void removeMemo(int index) {
+        memos.remove(index);
+    }
+    // memeos를 SharedPreferences에 저장
+    public void saveMemos() {
+        // 객체를 문자열(Json)으로 변경
+        String memoString = new GsonBuilder().serializeNulls().create().toJson(memos);
+
+        // 저장
+        SharedPreferences.Editor editor = sf.edit();
+        editor.putString(TBL_MEMO, memoString); // key, value 형식으로 저장
+        editor.commit();
+    }
+
+    // memos 획득
+    public List<Memo> loadMemos() {
+        // SharedPreferences의 memos 정보를 문자열로 획득
+        String memoString = sf.getString(TBL_MEMO, "");
+        if(!memoString.isEmpty()) {
+            Memo[] memoArray = new Gson().fromJson(memoString, Memo[].class);
+
+            // 배열을 ArrayList형태로 반환
+            memos = new ArrayList<>(Arrays.asList(memoArray));
+        }
+
+        return memos;
+    }
+
     // 회원 저장
     public void setMember(MemberModel member) {
         // member객체를 Json 형태의 문자열로 변환

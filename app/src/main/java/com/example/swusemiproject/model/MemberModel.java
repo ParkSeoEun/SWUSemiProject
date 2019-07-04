@@ -3,10 +3,17 @@ package com.example.swusemiproject.model;
 import java.io.Serializable;
 
 public class MemberModel implements Serializable{
+    private String imgId;
     private String id;
     private String name;
     private String pwd;
 
+    public String getImgId() {
+        return imgId;
+    }
+    public void setImgId(String imgId) {
+        this.imgId = imgId;
+    }
     public String getId() {
         return id;
     }
